@@ -9,6 +9,7 @@ RUN apt-get update;apt-get upgrade -y; apt-get -y install vim apache2 supervisor
 RUN sed -i -e"s/^bind-address\s*=\s*127.0.0.1/bind-address = 0.0.0.0/" /etc/mysql/my.cnf
 RUN sed -i 's/memory_limit = 128M/memory_limit = 2048M/g' /etc/php5/apache2/php.ini
 RUN a2enmod rewrite
+RUN a2enmod headers
 
 ADD start.sh /usr/local/bin/start.sh
 RUN chmod -v +x /usr/local/bin/start.sh
