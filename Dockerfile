@@ -4,7 +4,7 @@ FROM ubuntu:latest
 ENV DEBIAN_FRONTEND noninteractive
 
 # Install latest updates and mysql
-RUN apt-get update;apt-get upgrade -y; apt-get -y install vim apache2 supervisor wget curl php5 php5-mysql php5-gd php5-cli php5-curl php-apc git mysql-client mysql-server php5-dev php-pear php5-dev php5-intl php5-xsl openssh-client php5-mcrypt openjdk-7-jre  imagemagick
+RUN apt-get update;apt-get upgrade -y; apt-get -y install vim apache2 supervisor wget curl php5 php5-mysql php5-gd php5-cli php5-curl php-apc git mysql-client mysql-server php5-dev php-pear php5-dev php5-intl php5-xsl openssh-client php5-mcrypt openjdk-7-jre  imagemagick  mcrypt  php5-mcrypt
 
 RUN sed -i -e"s/^bind-address\s*=\s*127.0.0.1/bind-address = 0.0.0.0/" /etc/mysql/my.cnf
 RUN sed -i 's/memory_limit = 128M/memory_limit = 2048M/g' /etc/php5/apache2/php.ini
